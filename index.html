@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chemical Bonds</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="workspace.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Chemical workbench">
+        <div class="workspace-header">
+          <div><p class="eyebrow">CHEMICAL BONDS</p><h1>Workbench</h1></div>
+        </div>
+        <div class="condition-toolbar" aria-label="Reaction conditions">
+          <span>Conditions:</span>
+          <button data-condition="heat" type="button">Heat</button>
+          <button data-condition="spark" type="button">Spark / Ignition</button>
+          <button data-condition="water" type="button">Water / Moisture</button>
+          <button data-condition="light" type="button">Light / UV</button>
+          <button data-condition="electricity" type="button">Electricity</button>
+          <button data-condition="catalyst" type="button">Catalyst</button>
+          <button data-condition="pressure" type="button">Pressure</button>
+        </div>
+        <aside class="reaction-explorer" aria-label="Reaction library">
+          <div class="reaction-library-controls">
+            <label class="reaction-category-label" for="reaction-category">Filter reactions</label>
+            <select id="reaction-category" class="reaction-category">
+              <option value="all">All laboratory reactions</option>
+              <option value="Elemental combination">Elemental combination</option>
+              <option value="Acid-base">Acid-base</option>
+              <option value="Precipitation">Precipitation</option>
+              <option value="Metal reactions">Metal reactions</option>
+              <option value="Carbonates and gases">Carbonates and gases</option>
+              <option value="Thermal decomposition">Thermal decomposition</option>
+              <option value="Redox reactions">Redox reactions</option>
+            </select>
+            <input id="material-search" class="material-search" type="search" placeholder="Add a material…" aria-label="Add a material to workbench" />
+            <div id="material-results" class="material-results"></div>
+            <div class="reaction-filter" id="reaction-filter">Laboratory reaction library</div>
+          </div>
+          <div class="reaction-list" id="reaction-list"></div>
+        </aside>
+        <div class="workspace-message" id="workspace-message" aria-live="polite">Drag two elemental substances together to test a reaction.</div>
+        <div class="work-area">
+          <div class="workspace-canvas" id="workspace-canvas" aria-label="Chemical workbench">
+            <p class="canvas-prompt" id="canvas-prompt">Drag elements here, then drop them together to react.</p>
+            <div class="trash-actions">
+              <button class="undo-button" id="undo-reaction" type="button">↶ Undo</button>
+              <div class="trash-bin" id="trash-bin" aria-label="Trash">🗑<span>Remove</span></div>
+              <button class="clear-button" id="clear-workbench" type="button">Clear all</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="periodic-panel" aria-label="Periodic table">
+        <div class="material-tabs" role="tablist"><button class="active" data-shelf="elements" type="button">Elements</button><button data-shelf="common" type="button">Common reagents</button><button data-shelf="acids" type="button">Acids</button><button data-shelf="bases" type="button">Bases &amp; alkalis</button><button data-shelf="carbonates" type="button">Carbonates</button><button data-shelf="gases" type="button">Gases</button><button data-shelf="metals" type="button">Metals</button><button data-shelf="oxides" type="button">Oxides</button><button data-shelf="salts" type="button">Salts</button><button data-shelf="other" type="button">Other materials</button><button data-shelf="produced" type="button">Produced materials</button><button data-shelf="formulae" type="button">Chemical Formula</button></div>
+        <div class="shelf-panel active" id="shelf-elements"><div class="periodic-table" id="periodic-table" aria-label="Periodic table"></div></div>
+        <div class="shelf-panel" id="shelf-acids"></div><div class="shelf-panel" id="shelf-bases"></div><div class="shelf-panel" id="shelf-carbonates"></div><div class="shelf-panel" id="shelf-common"></div><div class="shelf-panel" id="shelf-gases"></div><div class="shelf-panel" id="shelf-metals"></div><div class="shelf-panel" id="shelf-other"></div><div class="shelf-panel" id="shelf-oxides"></div><div class="shelf-panel" id="shelf-produced"></div><div class="shelf-panel" id="shelf-salts"></div><div class="shelf-panel" id="shelf-formulae"></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
